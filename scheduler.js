@@ -1,5 +1,5 @@
-import { jobDispatchScheduler, jobCriScheduler } from './queues/queues.js'
-import { jobDispatchWorker, jobCriWorker } from './queues/workers.js'
+import { jobDispatchScheduler, jobCriScheduler, jobWatcherScheduler } from './queues/queues.js'
+import { jobDispatchWorker, jobCriWorker, jobWatchWorker } from './queues/workers.js'
 
 async function init() {
     Promise.all(
@@ -8,6 +8,9 @@ async function init() {
                 every: 2 * 1000,
             }),
             jobCriScheduler.upsertJobScheduler('job-cri-scheduler', {
+                every: 5 * 1000,
+            }),
+            jobWatcherScheduler.upsertJobScheduler('job-watcher-scheduler', {
                 every: 10 * 1000,
             })
         ]

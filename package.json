@@ -23,6 +23,7 @@
   "type": "module",
   "dependencies": {
     "bullmq": "^5.76.8",
+    "dockerode": "^5.0.0",
     "dotenv": "^17.4.2",
     "drizzle-orm": "^0.45.2",
     "express": "^5.2.1",
